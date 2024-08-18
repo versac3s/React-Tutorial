@@ -1,0 +1,39 @@
+REACT is a Javascript library developed and maintained by Facebook. 
+It is used for building dynamic and interactive user interfaces.
+REACT has a component-based architecture that allows you to create reusable UI elements making complex web applications easier to manage and maintain. React is used to build single-page applications.
+
+JSX -Javascript Extension Syntax
+It lets us write HTML directly inside JS. 
+
+SET UP LOCAL ENVIRONMENT
+Two tools can be used for this set up : Create-React-App or Vite
+We will be using Vite because it is comparatively faster (new technology)
+
+command - npm create vite@latest 
+1. Enter project name (for ex. first-react-app)
+2. Select a framework: React
+3. Select variant: Javascript 
+
+Now, to start the server write command: npm run dev
+(make sure your terminal is showing that you are in your react folder)
+
+COMPONENT - Resuable and independent piece of code
+function Title(){
+    return( ); we can return a single element only, ie only single parent element
+}
+then render the component, syntax: <Title/>
+
+function Title(){
+    return(
+        <div> ------> here we use div, we are still returning a single element.
+            <h1> Hello </h1>
+            <p> This is my first app </p>
+        </div>
+    );
+}
+
+Syntax for naming div: <div className = ""> (we can't write <div class ="">)
+
+JSX WITH CURLY BRACES
+When we want a segment of a code to e treated as pure JS, we use curly braces.
+<p> { js code, variables etc } </p>
