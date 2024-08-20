@@ -1,0 +1,6 @@
+.Product {
+    border: 2px solid aqua; /* Sets border width, style, and color */
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:10px;
+}
