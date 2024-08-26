@@ -1,3 +1,5 @@
+NOTES - 1
+
 REACT is a Javascript library developed and maintained by Facebook. 
 It is used for building dynamic and interactive user interfaces.
 REACT has a component-based architecture that allows you to create reusable UI elements making complex web applications easier to manage and maintain. React is used to build single-page applications.
