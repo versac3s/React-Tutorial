@@ -1,0 +1,48 @@
+UNDERSTANDING STATE IN REACT
+
+State is a fundamental concept in React, serving as a built-in object to store data or information about a component. 
+A component's state is dynamic—it can change over time, and whenever it does, the component re-renders automatically. 
+This re-rendering ensures that any updates to the state are reflected in the UI.
+Without state, changes made to a component wouldn't trigger a re-render, meaning the UI wouldn't update accordingly. 
+This is why state is essential: it guarantees that the component's UI stays in sync with its data.
+
+Note: A component will only re-render if the state value changes.
+
+HOOKS IN REACT
+
+Hooks are special functions that allow you to use state and other React features without needing to write a class component. 
+As of 2024, React offers 15 different hooks, each designed to handle various aspects of component behavior.
+
+1. useState()
+useState is a React hook that allows you to add state variables to your functional components.
+useState returns an array with two elements:
+    Current State: During the initial render, it matches the initialState passed to useState.
+    Setter Function: A function that allows you to update the state to a different value and trigger a re-render.
+
+Syntax:
+    const [stateVariable, setStateVariable] = useState(initialState);
+
+    initialState can be a primitive value, an object, or even a function reference.
+    When using a function reference as the initial state, pass it without invoking: useState(func) instead of useState(func()). This avoids re-executing the function on every render.
+
+Example:
+
+let incrementCount = () => {
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
+};
+
+In the example above, despite calling setCount four times, the counter will only increase by 1 when the button is clicked. 
+This occurs because setState is asynchronous.
+To properly update the state based on its current value, use a callback in the setter function:
+
+let increaseCount = () => {
+    setCount((currCount) => currCount + 1);
+    setCount((currCount) => currCount + 1);
+};
+
+With this approach, the counter will increase by 2, 4, 6, and so on.
+
+Note on Closures: In JavaScript, closure is a feature where an inner function has access to the variables of its outer function, enabling powerful patterns in state management.

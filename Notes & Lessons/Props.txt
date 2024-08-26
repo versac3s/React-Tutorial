@@ -1,0 +1,54 @@
+UNERSTANDING PROPS IN REACT
+
+Props are the mechanism in React for passing information from one component to another. 
+When you use a JSX tag, props are the attributes that you pass along with it, allowing components to be dynamic and reusable.
+
+PASSING ARRAYS TO PROPS
+
+You can easily pass arrays as props to components. Here's an example:
+
+import Product from "./Product.jsx";
+
+function ProductTab() {
+    let features2 = ["Durable", "Slim"];
+    let features3 = ["High sound", "Water resistant"];
+
+    // JSX tags with their props
+    return (
+        <>
+            <Product title="Phone" price={50000} features={{ a: "high-tech" }} />
+            <Product title="Laptop" price={80000} features={features2} />
+            <Product title="Headset" price={85000} features={features3} />
+        </>
+    );
+}
+
+export default ProductTab;
+
+In this example, features2 and features3 are arrays being passed as props to the Product component. 
+You can also pass objects or directly define the array in the JSX tag.
+
+CONDITIONAL RENDERING IN REACT
+
+Conditional rendering allows you to include elements in your component based on specific conditions.
+React provides a couple of ways to handle this:
+    Using the Ternary Operator:
+
+        {price > 50000 ? <p>Discount of = 10%</p> : null}
+
+        This means that if the price is above 50,000, a <p> tag displaying the discount will be generated. 
+        Otherwise, null is returned, and nothing is rendered.
+
+    Using Logical AND (&&) Operator:
+
+        {price > 50000 && <p>Discount = 10%</p>}
+
+        Here, the price condition is checked first. 
+        If it’s true, the <p> tag with the discount is rendered. 
+        If the condition is false, nothing is rendered.
+
+DYNAMIC COMPONENT STYLING
+
+React also allows you to dynamically apply styles to components based on certain conditions. 
+This technique enables you to make your components responsive to user interactions or state changes.
+For example, you could change the background color of a button based on whether it's active or disabled, ensuring your UI remains intuitive and responsive to user actions.
