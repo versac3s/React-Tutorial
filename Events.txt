@@ -1,0 +1,24 @@
+EVENTS IN REACT: 
+1. Handling Click Events
+Syntax : 
+    function doSomething(){
+        here we write the function we want to execute when the button is clicked
+    }
+    export default function Button(){
+        return (
+            <div>
+            <button onClick={doSomething}>
+        )
+    }
+2. Handling Non-click Events
+    export default function Button(){
+        return(
+            <div>
+            <button onMouseOver = {doSomething}>
+        )
+    }
+    onMouseOver is one of the many Events that are present in React.
+    Using this event, when we hover over the button, the given function is executed. 
+    You can check Event Reference under the mdn web document for more events.
+
+Whenever an Event occurs, an Event Object (associated with the event) is automatically passed to the handler

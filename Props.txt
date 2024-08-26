@@ -1,0 +1,30 @@
+NOTES - 2
+
+Props are the information you pass along the JSX tag.
+
+PASSING ARRAY TO PROPS
+Syntax: 
+import Product from "./Product.jsx";
+function ProductTab(){
+    let features2 = ["Durable","Slim"];
+    let features3 = ["High sound","Water resistant"];
+    //JSX tag with their props
+    return(
+        <>
+        <Product title="Phone" price={50000} features={{a:"high-tech"}}/> you can directly pass array as well
+        <Product title="Laptop" price={80000} features={features2}/>
+        <Product title="Headset" price={85000} features={features3}/>
+        </>
+    );
+}
+export default ProductTab;
+
+CONDITIONALS
+Adding elements in the basis of some conditions.
+
+We have two syntax:
+{price>50000? <p>Discount of = 10%</p> : null} this means, if price is abouve 50k, generate p tag and show discount else keep value null
+{price>50000 && <p>Discount = 10%</p>} here, the price condition is checked first, if its true only then we move forward and show discount.
+
+DYNAMIC COMPONENT STYLING
+Adding style based on some condition. 
