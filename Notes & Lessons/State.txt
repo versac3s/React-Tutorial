@@ -45,4 +45,55 @@ let increaseCount = () => {
 
 With this approach, the counter will increase by 2, 4, 6, and so on.
 
-Note on Closures: In JavaScript, closure is a feature where an inner function has access to the variables of its outer function, enabling powerful patterns in state management.
+Note on Closures: In JavaScript, closure is a feature where an inner function has access to the variables of its outer function, 
+enabling powerful patterns in state management.
+
+OBJECTS & STATE
+In React, state variables can store complex data structures, including objects. 
+When you pass objects as state variables, it allows you to manage multiple related state values within a single object and ensures efficient re-rendering of your components.
+
+Example: Managing State with an Object
+Consider the following example from a LudoBoard component (present in second-react-app):
+
+    import {useState} from "react";
+    export default function LudoBoard(){
+        let[moves, setMoves] = useState({blue:0, red:0, green:0, yellow:0}); 
+        //Here we have mutliple state variables so instead of traditional syntax, 
+        we use the above code to define all variables at once.
+    }
+    
+Here, the state moves is an object containing four properties (blue, red, green, yellow), 
+each representing the moves of different players. 
+Instead of using separate state variables for each property, we combine them into a single object, 
+making state management more streamlined.
+
+Updating State in Objects
+To update the state of an object and trigger a re-render, you can create functions that modify specific properties. 
+For example:
+
+    let updateBlue = () => {
+        moves.blue +=1;
+        setMoves({moves})
+        }
+
+When working with objects in state, it's crucial to use the spread operator (...) to create a new copy of the object. 
+This ensures that React detects a change in the object's reference, prompting a re-render of the component. 
+Without creating a new copy, the component won't re-render since React doesn't detect any change in the object's address.
+
+     let updateBlue=()=>{
+        moves.blue+=1;
+        setMoves({...moves});
+        OR 
+        setMoves({...moves, blue: moves.blue+1})
+    }
+
+Using Callback for State Updates
+Whenever the new state depends on the previous state, it's best practice to use a callback function within setState:
+
+    let updateBlue=()=>{
+        setMoves((prevMoves)=>{
+        return {...moves, blue: moves.blue+1}
+        });
+    }
+
+This method ensures that the state is updated correctly, even when multiple updates are queued.
